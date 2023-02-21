@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    background: #13C1AC;
+    flex: 1;
+    padding: 8px;
+    flex-direction: column;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+
+.row {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    
+    
+}
+
+.drop-down-row { 
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    
+}
+  
+
+.input-cell {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    padding: 8px;
+}
+

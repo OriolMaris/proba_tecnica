@@ -1,0 +1,12 @@
+.chevron {
+    transition: animation 2s forwards
+}
+.chevron:hover {
+    animation: App-logo-spin 1s forwards;
+}
+
+@keyframes App-logo-spin {
+    to {
+      transform: rotate(180deg);
+    }
+}

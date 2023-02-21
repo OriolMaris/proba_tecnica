@@ -1,0 +1,14 @@
+.fav-heat-icon {
+    max-width: 64px;
+    max-height: 64px;
+}
+
+.row {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.image {
+    max-width: 280px;
+    max-height: 280px;
+}

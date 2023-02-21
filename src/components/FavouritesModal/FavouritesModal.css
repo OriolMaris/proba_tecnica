@@ -1,0 +1,13 @@
+.fav-modal {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #13C1AC;
+    justify-content: center;
+    max-height: 60%;
+    min-height: 7%;
+    overflow-y: scroll;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
