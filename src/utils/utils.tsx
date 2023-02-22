@@ -6,7 +6,7 @@ export const getObjectKeys = <T extends Object>(obj: T): Array<keyof T> => {
 
 export const filterByAtr = (
   data: ItemDisplayI[] | undefined,
-  { title, description, price, email }: ItemI,
+  { title, description = '', price = '', email = '' }: ItemI,
 ) => {
   const filteredItem = data?.filter((value) => {
     if (

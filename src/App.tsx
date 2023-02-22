@@ -20,7 +20,6 @@ const App = () => {
   return (
     <DataContext.Provider value={_dataContext}>
       <AdvancedSearch />
-
       <FavouritesModal />
     </DataContext.Provider>
   )

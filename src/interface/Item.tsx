@@ -17,11 +17,11 @@ export interface ItemDisplayI {
 
 export type ItemKey = keyof ItemI
 
-// export interface ItemsKeys {
-//   [key: string]: ItemKey
-// }
-
 export interface favItemI {
   title: string
   image: string
 }
+
+// export interface ItemsKeys {
+//   [key: string]: ItemKey
+// }

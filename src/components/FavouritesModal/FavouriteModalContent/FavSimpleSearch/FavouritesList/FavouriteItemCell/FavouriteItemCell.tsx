@@ -1,9 +1,9 @@
 import React from 'react'
 
-import favHeatFilled from '../../../../../assets/favourite-filled.svg'
-import favHeat from '../../../../../assets/favourite-outlined.svg'
-import { type ItemDisplayI } from '../../../../../interface/Item'
-import { useDataContext } from '../../../../../store/DataContext'
+import favHeatFilled from '../../../../../../assets/favourite-filled.svg'
+import favHeat from '../../../../../../assets/favourite-outlined.svg'
+import { type ItemDisplayI } from '../../../../../../interface/Item'
+import { useDataContext } from '../../../../../../store/DataContext'
 
 import './FavouriteItemCell.css'
 
@@ -19,8 +19,6 @@ const FavouriteItemCell: React.FunctionComponent<FavouriteItemCellI> = ({
 
   const handleOnClick = () => {
     setTimeout(() => {
-      // funcio de teure de fav del context
-      // animacio cor
       store?.handleFavButton(favItem)
     }, 1000)
   }

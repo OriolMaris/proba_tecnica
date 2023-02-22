@@ -4,10 +4,10 @@ import { observer } from 'mobx-react'
 
 import CustomInputCell from './CustomInputCell/CustomInputCell'
 import DropDown from './DropDown/DropDown'
+import ItemCollection from './ItemCollection/ItemCollection'
 import { type ItemI, type ItemKey } from '../../interface/Item'
 import { useDataContext } from '../../store/DataContext'
 import { filterByAtr, sortByKey } from '../../utils/utils'
-import ItemCollection from '../ItemCollection/ItemCollection'
 
 import './AdvancedSearch.css'
 

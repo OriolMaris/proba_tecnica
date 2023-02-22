@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 
 import { observer } from 'mobx-react'
 
-import { type ItemDisplayI } from '../../interface/Item'
-import { useDataContext } from '../../store/DataContext'
-import ItemCell from '../ItemDisplay/ItemCell'
+import ItemCell from './ItemCell/ItemCell'
+import { type ItemDisplayI } from '../../../interface/Item'
+import { useDataContext } from '../../../store/DataContext'
 
 interface ItemCollectionI {
   searchedItems: ItemDisplayI[]

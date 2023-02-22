@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 
 import { observer } from 'mobx-react'
 
-import favHeatFilled from '../../assets/favourite-filled.svg'
-import favHeat from '../../assets/favourite-outlined.svg'
+import favHeatFilled from '../../../../assets/favourite-filled.svg'
+import favHeat from '../../../../assets/favourite-outlined.svg'
+import { type ItemDisplayI } from '../../../../interface/Item'
 import './ItemCell.css'
-import { type ItemDisplayI } from '../../interface/Item'
 
 interface ItemCellI {
   item: ItemDisplayI
