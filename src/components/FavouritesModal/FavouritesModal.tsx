@@ -9,17 +9,9 @@ const FavouritesModal: React.FunctionComponent = () => {
 
   return (
     <div className="fav-modal">
-      <div style={{ position: 'relative', display: 'flex', flex: 1 }}>
+      <div className="fav-modal-wrapper">
         <div
-          style={{
-            display: 'flex',
-            position: 'fixed',
-            backgroundColor: '#13C1AC',
-            width: '100%',
-            justifyContent: 'center',
-            borderTopLeftRadius: '25px',
-            borderTopRightRadius: '25px',
-          }}
+          className="fav-modal-button-wrapper"
           onClick={() => {
             setOpen(!open)
           }}
@@ -27,7 +19,7 @@ const FavouritesModal: React.FunctionComponent = () => {
           <p>{open ? 'Close' : 'Open'}</p>
         </div>
         {open && (
-          <div style={{ display: 'flex', flex: 1, paddingTop: '7%' }}>
+          <div className="fav-modal-content">
             <FavouriteModalContent></FavouriteModalContent>
           </div>
         )}

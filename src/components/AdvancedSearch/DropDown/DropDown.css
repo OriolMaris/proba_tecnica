@@ -1,12 +1,13 @@
-.chevron {
-    transition: animation 2s forwards
-}
-.chevron:hover {
-    animation: App-logo-spin 1s forwards;
+.drop-down-wrapper {
+    width: 20%;
+    height: 32px;
+    background-color:white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-    to {
-      transform: rotate(180deg);
-    }
+.drop-down-content {
+    position: absolute;
+    margin-top: 32px;
 }

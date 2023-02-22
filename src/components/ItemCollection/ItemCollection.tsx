@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { observer } from 'mobx-react'
 
@@ -7,34 +7,40 @@ import { useDataContext } from '../../store/DataContext'
 import ItemCell from '../ItemDisplay/ItemCell'
 
 interface ItemCollectionI {
-  pageNumber: number
+  searchedItems: ItemDisplayI[]
 }
 
 const ItemCollection: React.FunctionComponent<ItemCollectionI> = observer(
-  ({ pageNumber }) => {
+  ({ searchedItems }) => {
     const dataContext = useDataContext()
     const dataStore = dataContext?._dataStore
+    const [startIndex, setStartIndex] = useState(0)
 
     const handleFavButton = (item: ItemDisplayI) => {
       dataStore?.handleFavButton(item)
     }
 
-    // reaction(
-    //   () => dataStore?.sortedData.slice(0, 4 * pageNumber),
-    //   (data) => {
-    //     console.log(data)
-    //     setItemsCollection(data)
-    //   },
-    // )
+    useEffect(() => {
+      const handleScroll = () => {
+        if (
+          window.innerHeight + document.documentElement.scrollTop + 2 >=
+          document.documentElement.offsetHeight
+        ) {
+          setStartIndex((value) => value + 5)
+        }
+      }
 
-    // useEffect(() => {
-    //   // setItemsCollection(data)
-    //   console.log('alexxx')
-    // }, [pageNumber])
+      window.addEventListener('scroll', handleScroll)
+      return () => {
+        window.removeEventListener('scroll', handleScroll)
+      }
+    }, [])
+
+    const visibleItems = searchedItems.slice(0, startIndex + 5)
 
     return (
-      <div style={{ overflow: 'scroll' }}>
-        {dataStore?.filteredData?.map((item, key) => {
+      <div>
+        {visibleItems.map((item, key) => {
           return (
             <ItemCell
               key={key}

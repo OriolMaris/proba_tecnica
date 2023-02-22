@@ -2,7 +2,6 @@
     display: flex;
     background: #13C1AC;
     flex: 1;
-    padding: 8px;
     flex-direction: column;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
@@ -24,10 +23,4 @@
 }
   
 
-.input-cell {
-    display: flex;
-    flex: 1;
-    justify-content: space-between;
-    padding: 8px;
-}
 

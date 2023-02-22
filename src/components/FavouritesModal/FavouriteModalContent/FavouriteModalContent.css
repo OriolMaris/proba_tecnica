@@ -1,0 +1,10 @@
+.favourite-modal-content {
+    display: flex;
+    flex: 1;
+}
+
+.favourite-modal-missing-content {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}

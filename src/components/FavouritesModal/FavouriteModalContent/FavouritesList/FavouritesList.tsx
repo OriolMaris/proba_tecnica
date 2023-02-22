@@ -2,8 +2,8 @@ import React from 'react'
 
 import { observer } from 'mobx-react'
 
-import FavouriteItem from './FavouriteItem/FavouriteItem'
-import { useDataContext } from '../../../store/DataContext'
+import FavouriteItemCell from './FavouriteItemCell/FavouriteItemCell'
+import { useDataContext } from '../../../../store/DataContext'
 
 const FavouritesList: React.FunctionComponent = observer(() => {
   const dataContext = useDataContext()
@@ -12,7 +12,7 @@ const FavouritesList: React.FunctionComponent = observer(() => {
   return (
     <div>
       {dataStore?.getFavItems?.map((item, key) => {
-        return <FavouriteItem key={key} favItem={item}></FavouriteItem>
+        return <FavouriteItemCell key={key} favItem={item}></FavouriteItemCell>
       })}
     </div>
   )

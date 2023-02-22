@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 
+import DropDownCell from './DropDownCell/DropDownCell'
 import chevronDown from '../../../assets/chevron-small-down-svgrepo-com.svg'
 import chevronUp from '../../../assets/chevron-small-up-svgrepo-com.svg'
 import { type ItemKey } from '../../../interface/Item'
+
+import './DropDown.css'
 
 interface DropDownI {
   selctedItemKey: string
@@ -16,76 +19,34 @@ const DropDown: React.FunctionComponent<DropDownI> = ({
 }: DropDownI) => {
   const [open, setOpen] = useState(false)
 
+  const chevronDownSVG = (
+    <img style={{ maxWidth: '32px' }} src={chevronDown} className="chevron" />
+  )
+  const chevronUpSVG = (
+    <img style={{ maxWidth: '32px' }} src={chevronUp} className="chevron" />
+  )
+
   return (
-    <div
-      style={{
-        width: '20%',
-        height: '50px',
-        backgroundColor: 'white',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-      }}
-    >
+    <div className="drop-down-wrapper">
       <h3 style={{ margin: '0px' }}>{selctedItemKey}</h3>
       <button
         onClick={() => {
           setOpen(!open)
         }}
       >
-        {!open ? (
-          <img
-            style={{ maxWidth: '64px' }}
-            src={chevronDown}
-            className="chevron"
-          />
-        ) : (
-          <img
-            style={{ maxWidth: '64px' }}
-            src={chevronUp}
-            className="chevron"
-          />
-        )}
+        {!open ? chevronDownSVG : chevronUpSVG}
       </button>
-      <div
-        style={{
-          height: '30px',
-          position: 'absolute',
-          backgroundColor: 'white',
-        }}
-        hidden={!open}
-      >
+      <div className="drop-down-content" hidden={!open}>
         {itemsKeys.map((item, key) => {
           return (
-            <div
+            <DropDownCell
               key={key}
-              style={{
-                margin: 0,
-                padding: 0,
-                backgroundColor: 'white',
+              item={item}
+              onClick={() => {
+                setItemKey(item)
+                setOpen(!open)
               }}
-            >
-              {key !== 0 && (
-                <hr
-                  style={{
-                    margin: 0,
-                    padding: 0,
-                  }}
-                ></hr>
-              )}
-              <h3
-                style={{
-                  margin: 0,
-                  padding: 0,
-                }}
-                onClick={() => {
-                  setItemKey(item)
-                  setOpen(!open)
-                }}
-              >
-                {item}
-              </h3>
-            </div>
+            ></DropDownCell>
           )
         })}
       </div>

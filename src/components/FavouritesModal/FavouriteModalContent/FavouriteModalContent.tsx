@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react'
 
-import { useDataContext } from '../../../store/DataContext'
-import FavouritesList from '../FavouritesList/FavouritesList'
+import { observer } from 'mobx-react'
 
-const FavouriteModalContent: React.FunctionComponent = () => {
+import FavouritesList from './FavouritesList/FavouritesList'
+import { useDataContext } from '../../../store/DataContext'
+
+import './FavouriteModalContent.css'
+
+const FavouriteModalContent: React.FunctionComponent = observer(() => {
   const data = useDataContext()
   const store = data?._dataStore
   const [showList, setShowList] = useState<boolean>(false)
@@ -13,16 +17,17 @@ const FavouriteModalContent: React.FunctionComponent = () => {
   }, [store?.getFavHasData])
 
   return (
-    <div style={{ display: 'flex', flex: 1 }}>
+    <div className="favourite-modal-content">
+      {/* <FavouriteSearch></FavouriteSearch> */}
       {showList ? (
         <FavouritesList />
       ) : (
-        <div style={{ display: 'flex', flex: 1, justifyContent: 'center' }}>
+        <div className="favourite-modal-missing-content">
           <h1>The are no favourites</h1>
         </div>
       )}
     </div>
   )
-}
+})
 
 export default FavouriteModalContent

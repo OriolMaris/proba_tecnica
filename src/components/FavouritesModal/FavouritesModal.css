@@ -11,3 +11,25 @@
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
 }
+
+.fav-modal-wrapper {
+    position: relative;
+    display: flex;
+    flex: 1
+}
+
+.fav-modal-button-wrapper {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    background-color: #13C1AC;
+    width: 100%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.fav-modal-content {
+    display: flex;
+    flex: 1;
+    padding-top: 6%;
+}

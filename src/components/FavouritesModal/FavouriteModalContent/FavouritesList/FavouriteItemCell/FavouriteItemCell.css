@@ -1,0 +1,8 @@
+.fav-item-cell-wrapper {
+    border: 5px;
+    border-color: black;
+    display: flex;
+    align-self: flex-start;
+    max-height: 256px;
+    max-width: 256px;
+}
