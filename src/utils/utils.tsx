@@ -27,8 +27,10 @@ export const filterByAtr = (
   return filteredItem
 }
 export const sortByKey = (data: ItemDisplayI[] | undefined, key: ItemKey) => {
-  return data?.sort((a: ItemDisplayI, b: ItemDisplayI) => {
-    if (a[key] > b[key]) return 0
-    else return -1
-  })
+  return (
+    data?.sort((a: ItemDisplayI, b: ItemDisplayI) => {
+      if (a[key] > b[key]) return 0
+      else return -1
+    }) ?? []
+  )
 }

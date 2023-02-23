@@ -1,36 +1,15 @@
-import React, { type ReactElement } from 'react'
+import React from 'react'
 
-import { render } from '@testing-library/react'
+import { configure, render } from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
 
 import App from './App'
 
+jest.mock('axios', () => jest.fn())
+
+configure({ adapter: new Adapter() })
 describe('App tests', () => {
-  // let _dataContext: { _dataStore: DataStore }
-  let node: ReactElement
-
-  beforeEach(() => {
-    // _dataContext = {
-    //   _dataStore: new DataStore(new DataHttpClientMock()),
-    // }
-    node = (
-      <App />
-
-      // <DataContext.Provider value={_dataContext}>
-      //   <AdvancedSearch />
-      //   <FavouritesModal />
-      // </DataContext.Provider>
-    )
+  test('App render', () => {
+    render(<App />)
   })
-
-  afterEach(() => {
-    jest.clearAllMocks()
-  })
-
-  test('render App', () => {
-    render(node)
-  })
-
-  // test('when render App data lenght = 0', () => {
-  //   mount(node)
-  // })
 })

@@ -4,7 +4,7 @@ import { type ItemKey } from '../../../../interface/Item'
 
 import './DropDownCell.css'
 
-interface DropDownCellI {
+export interface DropDownCellI {
   item: ItemKey
   onClick: () => void
 }

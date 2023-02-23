@@ -1,7 +1,6 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 
-import AdvancedSearch from './components/AdvancedSearch/AdvancedSearch'
-import FavouritesModal from './components/FavouritesModal/FavouritesModal'
+import HomeScreen from './screen/HomeScreen'
 import { DataHttpClient } from './service/DataHttpClient'
 import DataContext from './store/DataContext'
 import DataStore from './store/DataStore'
@@ -13,15 +12,9 @@ const App = () => {
     _dataStore: new DataStore(new DataHttpClient()),
   }).current
 
-  useEffect(() => {
-    _dataContext._dataStore.getApiData()
-    // trigger only once on create Component
-  }, [])
-
   return (
     <DataContext.Provider value={_dataContext}>
-      <AdvancedSearch />
-      <FavouritesModal />
+      <HomeScreen />
     </DataContext.Provider>
   )
 }

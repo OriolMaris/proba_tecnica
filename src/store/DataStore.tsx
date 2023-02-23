@@ -45,9 +45,10 @@ export default class DataStore {
     this.data[index] = newItem
   }
 
+  @action
   inicializeData = (value: ItemI[]) => {
     this.data = [
-      ...(value.map(({ title, description, image, price, email }) => {
+      ...value.map(({ title, description, image, price, email }) => {
         const newItem: ItemDisplayI = {
           title,
           description,
@@ -57,9 +58,8 @@ export default class DataStore {
           isFav: false,
         }
         return newItem
-      }) ?? []),
+      }),
     ]
-    this.setData(this.data)
   }
 
   @action

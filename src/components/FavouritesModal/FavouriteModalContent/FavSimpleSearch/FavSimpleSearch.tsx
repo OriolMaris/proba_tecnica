@@ -29,7 +29,9 @@ const FavSimpleSearch: React.FunctionComponent = observer(() => {
 
   return (
     <div className="container">
-      <div className="row">{CustomInputCell('title', title, setTitle)}</div>
+      <div className="row">
+        <CustomInputCell name={'title'} value={title} onChange={setTitle} />
+      </div>
       <div>
         <div className="app-container">
           {showList && items?.length !== 0 ? (

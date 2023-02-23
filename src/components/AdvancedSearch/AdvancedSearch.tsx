@@ -46,12 +46,16 @@ const AdvancedSearch: React.FunctionComponent = observer(() => {
   return (
     <div className="container">
       <div className="row">
-        {CustomInputCell('title', title, setTitle)}
-        {CustomInputCell('description', description, setDescription)}
+        <CustomInputCell name={'title'} value={title} onChange={setTitle} />
+        <CustomInputCell
+          name={'description'}
+          value={description}
+          onChange={setDescription}
+        />
       </div>
       <div className="row">
-        {CustomInputCell('price', price, setPrice)}
-        {CustomInputCell('email', email, setEmail)}
+        <CustomInputCell name={'price'} value={price} onChange={setPrice} />
+        <CustomInputCell name={'email'} value={email} onChange={setEmail} />
       </div>
       <div className="drop-down-row">
         <DropDown

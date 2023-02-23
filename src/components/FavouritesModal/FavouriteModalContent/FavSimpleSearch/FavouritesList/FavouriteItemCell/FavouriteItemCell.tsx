@@ -18,9 +18,7 @@ const FavouriteItemCell: React.FunctionComponent<FavouriteItemCellI> = ({
   const store = data?._dataStore
 
   const handleOnClick = () => {
-    setTimeout(() => {
-      store?.handleFavButton(favItem)
-    }, 1000)
+    store?.handleFavButton(favItem)
   }
 
   return (
