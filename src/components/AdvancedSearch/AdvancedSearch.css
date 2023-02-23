@@ -1,3 +1,10 @@
+.wrapper-adv-search {
+    display: flex;
+    background: #87e0d6;
+    flex: 1;
+    flex-direction: column;
+}
+
 .container {
     display: flex;
     background: #13C1AC;
@@ -11,14 +18,16 @@
     display: flex;
     flex: 1;
     flex-direction: row;
-    
-    
 }
 
 .drop-down-row { 
     display: flex;
     flex: 1;
     justify-content: center;
+    background: #13C1AC;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    padding-bottom: 16px;
     
 }
   

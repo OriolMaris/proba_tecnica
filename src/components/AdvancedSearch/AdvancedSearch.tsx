@@ -44,25 +44,27 @@ const AdvancedSearch: React.FunctionComponent = observer(() => {
     []
 
   return (
-    <div className="container">
-      <div className="row">
-        <CustomInputCell name={'title'} value={title} onChange={setTitle} />
-        <CustomInputCell
-          name={'description'}
-          value={description}
-          onChange={setDescription}
-        />
-      </div>
-      <div className="row">
-        <CustomInputCell name={'price'} value={price} onChange={setPrice} />
-        <CustomInputCell name={'email'} value={email} onChange={setEmail} />
-      </div>
-      <div className="drop-down-row">
-        <DropDown
-          selctedItemKey={isSearchKey}
-          setItemKey={setSearchKey}
-        ></DropDown>
-        <button onClick={handleSearch}>Search</button>
+    <div className="wrapper-adv-search">
+      <div className="container">
+        <div className="row">
+          <CustomInputCell name={'title'} value={title} onChange={setTitle} />
+          <CustomInputCell
+            name={'description'}
+            value={description}
+            onChange={setDescription}
+          />
+        </div>
+        <div className="row">
+          <CustomInputCell name={'price'} value={price} onChange={setPrice} />
+          <CustomInputCell name={'email'} value={email} onChange={setEmail} />
+        </div>
+        <div className="drop-down-row">
+          <DropDown
+            selctedItemKey={isSearchKey}
+            setItemKey={setSearchKey}
+          ></DropDown>
+          <button onClick={handleSearch}>Search</button>
+        </div>
       </div>
       <div>
         <div className="app-container">
